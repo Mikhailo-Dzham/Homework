@@ -56,7 +56,7 @@ class Trapeze:
         return (self.a + self.b + self.c > self.d and
                 self.a + self.b + self.d > self.c and
                 self.a + self.c + self.d > self.b and
-                self.b + self.c + self.d > self.a)
+                self.b + self.c + self.d > self.a) and (self.a - self.c !=0)
 
 class Triangle:
     max_p = 0
