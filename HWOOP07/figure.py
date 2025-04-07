@@ -14,10 +14,11 @@ class Figure:
 
     def _perimetr(self):
         if self.dim3d:
-            if self.__class__.__name__ != "Circle":
-                return sum(self.sides)
-            else:
+            if self.__class__.__name__ == "Circle":
                 return self.r *= math.pi
+            else:
+                return sum(self.sides)
+
         else:
             return None
 
