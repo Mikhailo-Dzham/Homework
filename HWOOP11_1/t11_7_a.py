@@ -1,34 +1,46 @@
-def a_task(x, k):
+def a_task(x, k=-1):
     x_k = x
-    for i in range(1, k + 1):
-        x_k *= x ** 2 / (2 * i * (2 * i + 1))
+    n = 1
+    yield x_k
+    while n !=k:
+        x_k *= x ** 2 / (2 * n * (2 * n + 1))
+        n +=1
         yield x_k
 
 
-def b_task(x, k):
+def b_task(x, k=-1):
     x_k = -x
-    for i in range(2, k + 1):
-        x_k *= -(x / i)
+    n = 2
+    yield x_k
+    while n !=k:
+        x_k *= -(x / n)
+        n +=1
         yield x_k
 
-def c_task(x, k):
+
+def c_task(x, k=-1):
     x_k = 1
-    for i in range(2, k + 1):
+    n = 2
+    yield x_k
+    while n !=k:
         x_k *= -x
-        for j in range(i**2-2*i, i**2-i+1):
+        for j in range(n ** 2 - 2 * n, n ** 2 - n + 1):
             if not j:
                 continue
             x_k /= j
+        n +=1
         yield x_k
 
-def d_task(x, k):
+
+def d_task(x, k=-1):
     x_k = 1
-    for i in range(1, k+1):
-        x_k *= x / i
-        yield x_k * (i + 1)
+    n = 1
+    while n !=k:
+        x_k *= x / n
+        yield x_k * (n + 1)
 
 
-result = d_task(2, 5)
+result = d_task(2, )
 for x in result:
     print(x)
 print(result)

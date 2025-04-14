@@ -1,13 +1,21 @@
-def a_sum(n):
-    n_sum = 0
-    for i in range(1, n+1):
-        if i % 2 == 0:
-            n_sum -=1
-    if n % 2 != 0:
-        n_sum += n
-    return n_sum
+def a_sum_bl(n):
+    return -1 * (n // 2) + n * (n % 2)
 
 
+def a_sum(k=-1):
+    s = 1
+    n = 1
+    yield s
+    while n != k:
+        n += 1
+        s += (-1) ** (n + 1) * n
+        yield s
 
-print(a_sum(11))
+def b_sum(k=-1):
+    pass
 
+
+for i in a_sum(10):
+    print(i)
+for i in range(1, 11):
+    print(a_sum_bl(i))
