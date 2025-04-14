@@ -12,10 +12,26 @@ def a_sum(k=-1):
         yield s
 
 def b_sum(k=-1):
-    pass
+    s = 0.5
+    n  = 2
+    yield  s
+    while n !=k:
+        n +=1
+        s += 1/((n-1)*n)
+        yield s
+
+def c_cum(k=-1):
+    s = 0.5
+    n = 2
+    yield s
+    while n !=k:
+        n+=1
+        s += (-1)**n * (n-1)/n
+        yield s
 
 
-for i in a_sum(10):
-    print(i)
-for i in range(1, 11):
-    print(a_sum_bl(i))
+try:
+    for i in c_cum():
+        last = i
+except KeyboardInterrupt:
+    print(last)
