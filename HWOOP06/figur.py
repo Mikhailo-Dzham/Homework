@@ -12,11 +12,11 @@ class Circle:
         self.area = round((pi * r ** 2), 3)
         Circle.biggest_cir_area = round(max(Circle.biggest_cir_area, self.area), 3)
         Circle.longest_cir = round(max(Circle.longest_cir, self.len), 3)
-
-
 class Rectangle:
     max_p = 0
     max_area = 0
+
+
 
     def __init__(self, a, b):
         self.a = a
